@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+	<bean id="EditeurDAO" class="g_biblio.hibernate.EditeurDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AuteurDAO" class="g_biblio.hibernate.AuteurDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OuvrageDAO" class="g_biblio.hibernate.OuvrageDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UtilisateurDAO" class="g_biblio.hibernate.UtilisateurDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ActionDAO" class="g_biblio.hibernate.ActionDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="EditeurPersistence" class="g_biblio.hibernate.EditeurPersistence"
+		abstract="false" scope="singleton" lazy-init="default"
+        autowire="default">
+		<property name="editeurDao">
+			<ref bean="EditeurDAO" />
+		</property>
+	</bean>
+	<bean id="ActionPersistence" class="g_biblio.hibernate.ActionPersistence"
+		abstract="false" scope="singleton" lazy-init="default"
+        autowire="default">
+		<property name="actionDao">
+			<ref bean="ActionDAO" />
+		</property>
+	</bean>
+	<bean id="OuvragePersistence" class="g_biblio.hibernate.OuvragePersistence"
+		abstract="false" scope="singleton" lazy-init="default"
+        autowire="default">
+		<property name="ouvrageDao">
+			<ref bean="OuvrageDAO" />
+		</property>
+	</bean>
+	<bean id="UtilisateurPersistence" class="g_biblio.hibernate.UtilisateurPersistence"
+		abstract="false" scope="singleton" lazy-init="default"
+        autowire="default">
+		<property name="utilisateurDao">
+			<ref bean="UtilisateurDAO" />
+		</property>
+	</bean>
+	<bean id="AuteurPersistence" class="g_biblio.hibernate.AuteurPersistence"
+		abstract="false" scope="singleton" lazy-init="default"
+        autowire="default">
+		<property name="auteurDao">
+			<ref bean="AuteurDAO" />
+		</property>
+	</bean>
+</beans>
