@@ -1,15 +1,51 @@
+/**
+ * 
+ */
 package g_biblio.business;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
 
-public class UserBusinessTest extends TestCase{
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author soufiane
+ *
+ */
+public class UserBusinessTest {
+
+	public UserBusinessTest() {
+	}
 
 	/**
-	 * @param args
+	 * @throws java.lang.Exception
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	@Before
+	public void setUp() throws Exception {
+	}
 
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/**
+	 * Test method for {@link g_biblio.business.UserBusiness#getUserInfo()}.
+	 */
+	@Test
+	public void testGetUserInfo() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link g_biblio.business.UserBusiness#getAllUsers()}.
+	 */
+	@Test
+	public void testGetAllUsers() {
+		fail("Not yet implemented");
 	}
 
 }
