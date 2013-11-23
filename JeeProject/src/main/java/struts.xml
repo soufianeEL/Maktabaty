@@ -18,7 +18,7 @@
 			</result></action>
 	</package>
 	<package name="page" namespace="/pages" extends="struts-default">
-	<action name="ShowUserPage" class="g_biblio.struts.ShowUserPage">
+	<action name="ShowUserPage" class="g_biblio.struts.ShowUserPage" method="execute">
 		<result name="success" type="dispatcher">
 			/showUserPage.jsp
 		</result></action></package>

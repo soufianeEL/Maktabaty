@@ -1,4 +1,7 @@
-package g_biblio.hibernate;
+package g_biblio.business;
+
+import g_biblio.hibernate.Editeur;
+import g_biblio.hibernate.EditeurDAO;
 
 public class EditeurPersistence {
 	

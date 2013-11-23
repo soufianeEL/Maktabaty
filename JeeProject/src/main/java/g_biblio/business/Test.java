@@ -5,11 +5,8 @@ import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 
 import g_biblio.hibernate.Auteur;
-import g_biblio.hibernate.AuteurPersistence;
 import g_biblio.hibernate.Editeur;
-import g_biblio.hibernate.EditeurPersistence;
 import g_biblio.hibernate.Ouvrage;
-import g_biblio.hibernate.OuvragePersistence;
 
 public class Test {
 

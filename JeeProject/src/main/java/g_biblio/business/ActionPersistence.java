@@ -1,4 +1,9 @@
-package g_biblio.hibernate;
+package g_biblio.business;
+
+import g_biblio.hibernate.Action;
+import g_biblio.hibernate.ActionDAO;
+
+import java.util.List;
 
 public class ActionPersistence {
 	
@@ -26,5 +31,9 @@ public class ActionPersistence {
 	
 	public void deleteAction(Action action){
 		actionDao.delete(action);
+	}
+	
+	public List<Action> findAllAction(){
+		return actionDao.findAll();
 	}
 }

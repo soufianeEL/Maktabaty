@@ -3,7 +3,6 @@ package g_biblio.business;
 import java.util.ArrayList;
 
 import g_biblio.hibernate.Ouvrage;
-import g_biblio.hibernate.OuvragePersistence;
 
 public class BookBusiness {
 	

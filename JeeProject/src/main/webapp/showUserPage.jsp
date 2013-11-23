@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -51,20 +52,22 @@
 
 		<div class="row clearfix">
 			<div class="col-md-8 column">
-				<h3 class="text-center text-danger">h3. le nom et prenom de
-					l'uti</h3>
+				<h3 class="text-center">Vos informations !!</h3>
 				<dl>
-					<dt>Description lists</dt>
-					<dd>A description list is perfect for defining terms.</dd>
-					<dt>Euismod</dt>
-					<dd>Vestibulum id ligula porta felis euismod semper eget
-						lacinia odio sem nec elit.</dd>
-					<dd>Donec id elit non mi porta gravida at eget metus.</dd>
-					<dt>Malesuada porta</dt>
-					<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-					<dt>Felis euismod semper eget lacinia</dt>
-					<dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris
-						condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+					<dt>Nom :</dt>
+					<dd><s:property value="user.nom" /></dd>
+					<dt>Prénom :</dt>
+					<dd><s:property value="user.prenom" /></dd>
+					<dt>Age : </dt>
+					<dd><s:property value="user.age" /></dd>
+					<dt>Email :</dt>
+					<dd><s:property value="user.email" /></dd>
+					<dt>Profession : </dt>
+					<dd><s:property value="user.profession" /></dd>
+					<dt>Crédit :</dt>
+					<dd><s:property value="user.credit" /></dd>
+					<dt>Date d'inscription :</dt>
+					<dd><s:property value="user.dateInscription" /></dd>
 				</dl>
 			</div>
 			<div class="col-md-4 column">

@@ -1,4 +1,9 @@
-package g_biblio.hibernate;
+package g_biblio.business;
+
+import g_biblio.hibernate.Utilisateur;
+import g_biblio.hibernate.UtilisateurDAO;
+
+import java.util.List;
 
 public class UtilisateurPersistence {
 
@@ -28,4 +33,8 @@ public class UtilisateurPersistence {
 		utilisateurDao.delete(utilisateur);
 	}
 
+	public List<Utilisateur> findAllUtilisateur(){
+		return utilisateurDao.findAll();
+		
+	}
 }

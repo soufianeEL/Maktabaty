@@ -1,4 +1,9 @@
-package g_biblio.hibernate;
+package g_biblio.business;
+
+import g_biblio.hibernate.Ouvrage;
+import g_biblio.hibernate.OuvrageDAO;
+
+import java.util.List;
 
 public class OuvragePersistence {
 	
@@ -26,5 +31,10 @@ public class OuvragePersistence {
 
 	public void deleteOuvrage(Ouvrage ouvrage){
 		ouvrageDao.delete(ouvrage);
+	}
+	
+	public List<Ouvrage> findAllOuvrage(){
+		return ouvrageDao.findAll();
+		
 	}
 }

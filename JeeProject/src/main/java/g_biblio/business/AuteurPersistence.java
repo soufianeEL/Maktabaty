@@ -1,4 +1,9 @@
-package g_biblio.hibernate;
+package g_biblio.business;
+
+import g_biblio.hibernate.Auteur;
+import g_biblio.hibernate.AuteurDAO;
+
+import java.util.List;
 
 public class AuteurPersistence {
 	
@@ -26,6 +31,10 @@ public class AuteurPersistence {
 	
 	public void deleteAuteur(Auteur auteur){
 		auteurDao.delete(auteur);
+	}
+	
+	public List<Auteur> findAllAuteur(){
+		return auteurDao.findAll();
 	}
 
 }
