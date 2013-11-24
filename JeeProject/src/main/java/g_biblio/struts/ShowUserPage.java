@@ -8,14 +8,12 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ShowUserPage extends ActionSupport {
 	
 	private Utilisateur user = new Utilisateur();
-	private String s = "test name";
 
 	/**
 	 * @return
 	 */
 	public String execute() {
-		s="salammm";
-		System.out.println("==> showUserPage");
+		System.out.println("==> showUserPage action");
 		user = UserBusiness.getUserInfo();
 		if(user != null){
 			System.out.println("not null !! ");

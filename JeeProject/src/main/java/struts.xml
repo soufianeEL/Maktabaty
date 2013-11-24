@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-
 	<package name="login" namespace="/logins" extends="struts-default">
 		<action name="ShowLoginPage" class="g_biblio.struts.ShowLoginPage">
 			<result name="success" type="dispatcher">
@@ -15,11 +14,27 @@
 			<result name="success" type="redirectAction">
 				<param name="namespace">/pages</param>
 				<param name="actionName">ShowUserPage</param>
-			</result></action>
+			</result>
+		</action>
 	</package>
+	
+	<package name="crud" namespace="/cruds" extends="struts-default">
+		<action name="User" class="g_biblio.struts.User">
+			<result name="success" type="redirectAction">
+				<param name="namespace">/pages</param>
+				<param name="actionName">ShowUserPage</param>
+			</result>
+			<result name="error" type="dispatcher">/loginPage.jsp</result>
+		</action>
+	</package>
+	
 	<package name="page" namespace="/pages" extends="struts-default">
-	<action name="ShowUserPage" class="g_biblio.struts.ShowUserPage" method="execute">
-		<result name="success" type="dispatcher">
-			/showUserPage.jsp
-		</result></action></package>
+		<action name="ShowUserPage" class="g_biblio.struts.ShowUserPage"
+			method="execute">
+			<result name="success" type="dispatcher">
+				/showUserPage.jsp
+			</result>
+		</action>
+	</package>
+
 </struts>    

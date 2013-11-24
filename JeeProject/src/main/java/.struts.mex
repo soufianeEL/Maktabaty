@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
-  <package name="login" location="29,52" size="179,74">
-    <action name="ShowLoginPage" location="9,26" size="150,41">
+  <package name="login" location="439,76" size="181,80">
+    <action name="ShowLoginPage" location="28,36" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="loginPage.jsp" />
       </result>
     </action>
   </package>
-  <package name="secure" location="429,46" size="170,97">
-    <action name="authentificateUser" location="16,31" size="150,62">
+  <package name="secure" location="47,66" size="182,102">
+    <action name="authentificateUser" location="28,36" size="150,62">
       <result name="error">
         <resourceEdge source="error" routing="0" target="loginPage.jsp" />
       </result>
@@ -17,17 +17,27 @@
       </result>
     </action>
   </package>
-  <package name="page" location="29,162" size="201,93">
-    <action name="ShowUserPage" location="21,37" size="150,41">
+  <package name="page" location="10,182" size="181,80">
+    <action name="ShowUserPage" location="28,36" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="showUserPage.jsp" />
       </result>
     </action>
   </package>
-  <webResource name="showUserPage.jsp" path="/showUserPage.jsp" location="328,176" size="150,55" />
-  <webResource name="loginPage.jsp" path="/loginPage.jsp" location="236,10" size="150,55" />
-  <webResource name="showBookPage.jsp" path="/showBookPage.jsp" location="328,253" size="150,55" />
-  <webResource name="showAuthorPage.jsp" path="/showAuthorPage.jsp" location="506,179" size="150,55" />
-  <webResource name="showTransactionPage.jsp" path="/showTransactionPage.jsp" location="500,244" size="150,55" />
+  <package name="crud" location="45,297" size="187,128">
+    <action name="User" location="28,36" size="150,62">
+      <result name="success">
+        <resourceEdge source="success" routing="1" target="ShowUserPage" namespace="/pages">
+          <bendpoint dim1="-103,0" dim2="-68,124" />
+          <bendpoint dim1="-132,-55" dim2="-97,69" />
+        </resourceEdge>
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="loginPage.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="loginPage.jsp" path="/loginPage.jsp" location="246,10" size="150,55" />
+  <webResource name="showUserPage.jsp" path="/showUserPage.jsp" location="431,181" size="150,55" />
 </Struts2Diagram>
 

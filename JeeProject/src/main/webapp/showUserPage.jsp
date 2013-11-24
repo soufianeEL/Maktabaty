@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -55,19 +55,33 @@
 				<h3 class="text-center">Vos informations !!</h3>
 				<dl>
 					<dt>Nom :</dt>
-					<dd><s:property value="user.nom" /></dd>
+					<dd>
+						<s:property value="user.nom" />
+					</dd>
 					<dt>Prénom :</dt>
-					<dd><s:property value="user.prenom" /></dd>
-					<dt>Age : </dt>
-					<dd><s:property value="user.age" /></dd>
+					<dd>
+						<s:property value="user.prenom" />
+					</dd>
+					<dt>Age :</dt>
+					<dd>
+						<s:property value="user.age" />
+					</dd>
 					<dt>Email :</dt>
-					<dd><s:property value="user.email" /></dd>
-					<dt>Profession : </dt>
-					<dd><s:property value="user.profession" /></dd>
+					<dd>
+						<s:property value="user.email" />
+					</dd>
+					<dt>Profession :</dt>
+					<dd>
+						<s:property value="user.profession" />
+					</dd>
 					<dt>Crédit :</dt>
-					<dd><s:property value="user.credit" /></dd>
+					<dd>
+						<s:property value="user.credit" />
+					</dd>
 					<dt>Date d'inscription :</dt>
-					<dd><s:property value="user.dateInscription" /></dd>
+					<dd>
+						<s:property value="user.dateInscription" />
+					</dd>
 				</dl>
 			</div>
 			<div class="col-md-4 column">
@@ -79,21 +93,29 @@
 				<div class="modal fade" id="modal-container-287614" role="dialog"
 					aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
-						<div class="modal-content">
+						<s:form cssClass="modal-content" action="" method="post"
+							enctype="multipart/form-data">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
 									aria-hidden="true">×</button>
 								<h4 class="modal-title" id="myModalLabel">image et luplode
 									ici</h4>
 							</div>
-							<div class="modal-body">...</div>
+							<div class="modal-body">
+
+
+								<label for="exampleInputFile">File input</label> <input
+									type="file" name="upload" id="exampleInputFile">
+								<p class="help-block">Max 1 Mb AND Taille 64x64 !!</p>
+
+							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
 									data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save
+								<button type="submit" class="btn btn-primary">Save
 									changes</button>
 							</div>
-						</div>
+						</s:form>
 
 					</div>
 
@@ -105,20 +127,68 @@
 				<div class="modal fade" id="modal-container-449056" role="dialog"
 					aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
-						<div class="modal-content">
+						<s:form cssClass="modal-content" action="/cruds/user.action?todo=update">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
 									aria-hidden="true">×</button>
 								<h4 class="modal-title" id="myModalLabel">le profil ici</h4>
 							</div>
-							<div class="modal-body">...</div>
+							<div class="modal-body">
+								
+								<div class="row">
+									<label class="col-sm-3 control-label">Nom :</label>
+									<div class="col-sm-6">
+									<input type="text" class="form-control" 
+										value="<s:property value="user.nom" />" required> 
+									</div> 
+								</div>
+								<div class="row">
+									<label class="col-sm-3 control-label">Prénom :</label> 
+									<div class="col-sm-6">
+									<input type="text" class="form-control" 
+										value="<s:property value="user.prenom" />"> 
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-sm-3 control-label">Age :</label> 
+									<div class="col-sm-6">
+									<input type="text" class="form-control" 
+										value="<s:property value="user.age" />"> 
+									</div>
+								</div> 
+								<div class="row">
+									<label class="col-sm-3 control-label">Email :</label> 
+									<div class="col-sm-6">
+									<input type="email" class="form-control" 
+										value="<s:property value="user.email" />" required> 
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-sm-3 control-label">profession :</label> 
+									<div class="col-sm-6">
+									<input type="text" class="form-control" 
+										value="<s:property value="user.profession" />"> 
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-sm-3 control-label">statut :</label> 
+									<div class="col-sm-6">
+									<select class="form-control" value="<s:property value="user.statut" />" required>
+										<option></option>
+										<option>0</option>
+										<option>1</option> 
+									</select>
+									</div>
+								</div>
+								
+							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
 									data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save
+								<button type="submit" class="btn btn-primary">Save
 									changes</button>
 							</div>
-						</div>
+						</s:form>
 
 					</div>
 

@@ -22,7 +22,7 @@
 		<property name="myeclipse.connection.profile">
 			MySQL JDBC Driver
 		</property>
-		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.show_sql">false</property>
 		<property name="hibernate.format_sql">true</property>
 		<mapping resource="g_biblio/hibernate/Editeur.hbm.xml" />
 		<mapping resource="g_biblio/hibernate/Auteur.hbm.xml" />
