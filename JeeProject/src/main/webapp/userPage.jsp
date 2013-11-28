@@ -37,7 +37,7 @@
 					<button type="button" class="close" data-dismiss="alert"
 						aria-hidden="true">×</button>
 					<h4>notification</h4>
-					<strong>attention!</strong> il y a qlq chose ça va pas<a href="#"
+					 il y a qlq chose ça va pas<a href="#"
 						class="alert-link">alert link</a>
 				</div>
 				<div class="alert alert-dismissable alert-info">

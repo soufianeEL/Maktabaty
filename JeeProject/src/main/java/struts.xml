@@ -42,4 +42,8 @@
 		<action name="TestAction" class="g_biblio.struts.TestAction">
 			<result name="success" type="dispatcher">
 				/bookPage.jsp
-			</result></action></package></struts>    
+			</result></action></package>
+	<package name="book" namespace="/book" extends="struts-default">
+		<action name="View" class="g_biblio.struts.Book" method="view">
+			<result name="view" type="dispatcher">/bookPage.jsp</result>
+		</action></package></struts>    

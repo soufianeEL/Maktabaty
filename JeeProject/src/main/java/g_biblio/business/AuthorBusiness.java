@@ -2,35 +2,35 @@ package g_biblio.business;
 
 import java.util.ArrayList;
 
+import g_biblio.hibernate.Auteur;
+import g_biblio.hibernate.Ouvrage;
+
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 
-import g_biblio.hibernate.Auteur;
-import g_biblio.hibernate.Editeur;
-import g_biblio.hibernate.Ouvrage;
-
-public class BookBusiness {
+public class AuthorBusiness {
 
 	// recuperer le bean a partir du conf spring et creation d'un bean factory
 	static BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource(
 			"applicationContext.xml"));
 	// creer une instance de OuvragePersistence
-	private static OuvragePersistence bookP = (OuvragePersistence) beanFactory.getBean("OuvragePersistence");
-	
+	private static OuvragePersistence bookP = (OuvragePersistence) beanFactory
+			.getBean("OuvragePersistence");
+	// creer une instance de AuteurPersistence
+	private static AuteurPersistence authorP = (AuteurPersistence) beanFactory
+			.getBean("AuteurPersistence");
+
 	private static Ouvrage book = new Ouvrage();
 	private static Auteur author = new Auteur();
-	private static Editeur publisher = new Editeur();
 
-	public static Ouvrage getBookInfo(int id) {
-		System.out.println("==> bookB");
-		book = bookP.findOuvrageById(id);
-		//author = book.getAuteur();
-		//publisher = book.getEditeur();
-		return book;
+	public static Auteur getAuthorInfo(int id) {
+		System.out.println("==> AuthorB");
+		author = authorP.findAuteurById(id);
+		return author;
 	}
 
-	public ArrayList<Ouvrage> getAllBooks() {
+	public ArrayList<Auteur> getAllAuthors() {
 
 		return null;
 	}

@@ -35,7 +35,7 @@ public class EditeurDAO extends HibernateDaoSupport {
 	public void save(Editeur transientInstance) {
 		log.debug("saving Editeur instance");
 		try {
-			// getHibernateTemplate().save(transientInstance);
+			//getHibernateTemplate().save(transientInstance);
 			Session session = HibernateSessionFactory.getSession();
 			Transaction tx = session.beginTransaction();
 			tx.begin();
@@ -131,7 +131,7 @@ public class EditeurDAO extends HibernateDaoSupport {
 	public Editeur merge(Editeur detachedInstance) {
 		log.debug("merging Editeur instance");
 		try {
-			// Editeur result = (Editeur) getHibernateTemplate().merge(
+			 //Editeur result = (Editeur) getHibernateTemplate().merge(
 			// detachedInstance);
 			Session session = HibernateSessionFactory.getSession();
 			Transaction tx = session.beginTransaction();

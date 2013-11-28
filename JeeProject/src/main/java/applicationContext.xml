@@ -9,6 +9,8 @@
 		<property name="configLocation" value="classpath:hibernate.cfg.xml">
 		</property>
 	</bean>
+
+	
 	<bean id="EditeurDAO" class="g_biblio.hibernate.EditeurDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -35,36 +37,31 @@
 		</property>
 	</bean>
 	<bean id="EditeurPersistence" class="g_biblio.business.EditeurPersistence"
-		abstract="false" scope="singleton" lazy-init="default"
-        autowire="default">
+		abstract="false" scope="singleton" lazy-init="default" autowire="default">
 		<property name="editeurDao">
 			<ref bean="EditeurDAO" />
 		</property>
 	</bean>
 	<bean id="ActionPersistence" class="g_biblio.business.ActionPersistence"
-		abstract="false" scope="singleton" lazy-init="default"
-        autowire="default">
+		abstract="false" scope="singleton" lazy-init="default" autowire="default">
 		<property name="actionDao">
 			<ref bean="ActionDAO" />
 		</property>
 	</bean>
 	<bean id="OuvragePersistence" class="g_biblio.business.OuvragePersistence"
-		abstract="false" scope="singleton" lazy-init="default"
-        autowire="default">
+		abstract="false" scope="singleton" lazy-init="default" autowire="default">
 		<property name="ouvrageDao">
 			<ref bean="OuvrageDAO" />
 		</property>
 	</bean>
 	<bean id="UtilisateurPersistence" class="g_biblio.business.UtilisateurPersistence"
-		abstract="false" scope="singleton" lazy-init="default"
-        autowire="default">
+		abstract="false" scope="singleton" lazy-init="default" autowire="default">
 		<property name="utilisateurDao">
 			<ref bean="UtilisateurDAO" />
 		</property>
 	</bean>
 	<bean id="AuteurPersistence" class="g_biblio.business.AuteurPersistence"
-		abstract="false" scope="singleton" lazy-init="default"
-        autowire="default">
+		abstract="false" scope="singleton" lazy-init="default" autowire="default">
 		<property name="auteurDao">
 			<ref bean="AuteurDAO" />
 		</property>

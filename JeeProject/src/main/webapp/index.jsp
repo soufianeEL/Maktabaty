@@ -41,15 +41,15 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a href="http://soufiane-pc:8080/webapp_test/logins/ShowLoginPage.action" class="navbar-brand">Maktabati</a>
+				<a href="/webapp_test/logins/ShowLoginPage.action" class="navbar-brand">Maktabati</a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse"
 				role="navigation">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="">Acceuil</a></li>
-					<li><a href="http://soufiane-pc:8080/webapp_test/showAuthorPage.jsp">Auteurs</a></li>
+					<li><a href="/webapp_test/authorPage.jsp">Auteurs</a></li>
 					<li><a href="#">Components</a></li>
-					<li><a href="http://soufiane-pc:8080/webapp_test/showBookPage.jsp">Recherche Avancé</a></li>
+					<li><a href="/webapp_test/book/View.action">Recherche Avancé</a></li>
 					<li><a href="#">se connecter</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">

@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
@@ -42,7 +43,7 @@ public class UtilisateurDAO extends HibernateDaoSupport {
 	public void save(Utilisateur transientInstance) {
 		log.debug("saving Utilisateur instance");
 		try {
-			//getHibernateTemplate().save(transientInstance);
+			// getHibernateTemplate().save(transientInstance);
 			Session session = HibernateSessionFactory.getSession();
 			Transaction tx = session.beginTransaction();
 			tx.begin();
@@ -58,7 +59,7 @@ public class UtilisateurDAO extends HibernateDaoSupport {
 	public void delete(Utilisateur persistentInstance) {
 		log.debug("deleting Utilisateur instance");
 		try {
-			//getHibernateTemplate().delete(persistentInstance);
+			// getHibernateTemplate().delete(persistentInstance);
 			Session session = HibernateSessionFactory.getSession();
 			Transaction tx = session.beginTransaction();
 			tx.begin();
@@ -76,7 +77,11 @@ public class UtilisateurDAO extends HibernateDaoSupport {
 	public Utilisateur findById(java.lang.Integer id) {
 		log.debug("getting Utilisateur instance with id: " + id);
 		try {
-			Utilisateur instance = (Utilisateur) getHibernateTemplate().get(
+			Session session = HibernateSessionFactory.getSession();
+			System.out.println("from utilisateur : find byid!!");
+			//Utilisateur instance = (Utilisateur) getHibernateTemplate().get(
+					//"g_biblio.hibernate.Utilisateur", id);
+			Utilisateur instance = (Utilisateur)session.get(
 					"g_biblio.hibernate.Utilisateur", id);
 			return instance;
 		} catch (RuntimeException re) {
@@ -147,7 +152,10 @@ public class UtilisateurDAO extends HibernateDaoSupport {
 		log.debug("finding all Utilisateur instances");
 		try {
 			String queryString = "from Utilisateur";
-			return getHibernateTemplate().find(queryString);
+			//return getHibernateTemplate().find(queryString);
+			Session session = HibernateSessionFactory.getSession();
+			System.out.println("from utilisateur !!");
+			return ((HibernateTemplate) session).find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
@@ -157,8 +165,14 @@ public class UtilisateurDAO extends HibernateDaoSupport {
 	public Utilisateur merge(Utilisateur detachedInstance) {
 		log.debug("merging Utilisateur instance");
 		try {
-			Utilisateur result = (Utilisateur) getHibernateTemplate().merge(
-					detachedInstance);
+			Session session = HibernateSessionFactory.getSession();
+			Transaction tx = session.beginTransaction();
+			tx.begin();
+
+			// Utilisateur result = (Utilisateur) getHibernateTemplate().merge(
+			// detachedInstance);
+			Utilisateur result = (Utilisateur) session.merge(detachedInstance);
+			tx.commit(); 
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {

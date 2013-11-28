@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -11,7 +12,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'showBookPage.jsp' starting page</title>
+<title>My JSP 'bookPage.jsp' starting page</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -32,6 +33,11 @@
 	<hr class="featurette-divider">
 	<div class="container">
 		<div class="row clearfix">
+			<div class="alert alert-success alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert"
+					aria-hidden="true">×</button>
+				il y a qlq chose ça va pas<a href="#" class="alert-link">alert link</a>
+			</div>
 			<div class="col-md-5 column">
 				<img alt="380x440" data-src="holder.js/380x420/auto"> <br>
 				<br>
@@ -40,33 +46,31 @@
 				<button type="button" class="btn btn-default">Default</button>
 			</div>
 			<div class="col-md-7 column">
-				<h3 class="text-center">h3. le titre de l'ouvrage</h3>
+				<h2 class="text-center">
+					<s:property value="book.titre" />
+				</h2><br>
 				<p>
-					<strong>Résumé ici</strong> Lorem ipsum dolor sit amet. Aliquam
-					eget sapien sapien. Curabitur in metus urna. In hac habitasse
-					platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam
-					purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis
-					posuere diam ut cursus. <em>Morbi commodo sodales nisi id
-						sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc
-						consequat lectus, id bibendum diam velit et dui.</em> Proin massa
-					magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam
-						mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod
-						ultrices massa, et feugiat ipsum consequat eu.</small>
+					<strong>Le Résumé Ici : </strong>
+					<s:property value="book.resume" /><br>
+					<em>Morbi commodo sodales nisi id metus n.</em><br>
+					<small>Aliquam mi erat, aliquam vel luctus eeu.</small>
 				</p>
 				<br>
-				<h4>les info qui existe dans la bdd :</h4>
+				<h4>A propos de "<s:property value="book.titre" />" :</h4>
 				<dl class="dl-horizontal">
-					<dt>Descriptions</dt>
-					<dd>A description list is perfect for defining terms.</dd>
-					<dt>Euismod</dt>
-					<dd>Vestibulum id ligula porta felis euismod semper eget
-						lacinia odio sem nec elit.</dd>
-					<dd>Donec id elit non mi porta gravida at eget metus.</dd>
-					<dt>Malesuada porta</dt>
-					<dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-					<dt>Felis euismod semper eget lacinia</dt>
-					<dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris
-						condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+					<dt>ISBN</dt>
+					<dd><s:property value="book.isbn" /></dd>
+					<dt>Prix</dt>
+					<dd>Pour pour acheter : <s:property value="book.prix" /> DH</dd>
+					<dd>Pour Emprinter : <s:property value="book.prix" />- 40% DH</dd>
+					<dt>En Stock</dt>
+					<dd><s:property value="book.enStock" /></dd>
+					<dt>Le Total</dt>
+					<dd><s:property value="book.total" /></dd>
+					<dt>Auteur</dt>
+					<dd><s:property value="author.nom" /></dd>
+					<dt>Editeur</dt>
+					<dd><s:property value="publisher.nom" /></dd>
 				</dl>
 			</div>
 		</div>

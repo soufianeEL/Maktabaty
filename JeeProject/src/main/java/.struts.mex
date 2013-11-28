@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Struts2Diagram version="2.0">
   <package name="login" location="442,36" size="192,91">
-    <action name="ShowLoginPage" location="36,44" size="150,41">
+    <action name="ShowLoginPage" location="37,45" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="login.jsp" />
       </result>
     </action>
   </package>
   <package name="secure" location="32,17" size="193,113">
-    <action name="authentificateUser" location="36,44" size="150,62">
+    <action name="authentificateUser" location="37,45" size="150,62">
       <result name="success">
         <resourceEdge source="success" routing="0" target="ShowUserPage" namespace="/pages" />
       </result>
@@ -18,26 +18,26 @@
     </action>
   </package>
   <package name="crud" location="466,198" size="181,130">
-    <action name="User_update" location="8,27" size="150,41">
+    <action name="User_update" location="9,28" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="ShowUserPage" namespace="/pages" />
       </result>
     </action>
-    <action name="User_create" location="3,72" size="150,41">
+    <action name="User_create" location="10,67" size="150,41">
       <result name="success_create">
         <resourceEdge source="success_create" routing="0" target="ShowUserPage" namespace="/pages" />
       </result>
     </action>
   </package>
   <package name="page" location="24,141" size="192,91">
-    <action name="ShowUserPage" location="36,44" size="150,41">
+    <action name="ShowUserPage" location="37,45" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="userPage.jsp" />
       </result>
     </action>
   </package>
   <package name="test" location="23,285" size="170,70">
-    <action name="TestAction" location="18,26" size="150,41">
+    <action name="TestAction" location="19,27" size="150,41">
       <result name="success">
         <resourceEdge source="success" routing="0" target="bookPage.jsp" />
       </result>
@@ -46,5 +46,12 @@
   <webResource name="login.jsp" path="/login.jsp" location="266,14" size="150,55" />
   <webResource name="userPage.jsp" path="/userPage.jsp" location="302,148" size="150,55" />
   <webResource name="bookPage.jsp" path="/bookPage.jsp" location="292,334" size="150,55" />
+  <package name="book" location="51,381" size="170,70">
+    <action name="View" location="8,23" size="150,40">
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="bookPage.jsp" />
+      </result>
+    </action>
+  </package>
 </Struts2Diagram>
 
