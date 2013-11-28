@@ -127,7 +127,7 @@
 				<div class="modal fade" id="modal-container-449056" role="dialog"
 					aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
-						<s:form cssClass="modal-content" action="/cruds/user.action?todo=update">
+						<s:form cssClass="modal-content" action="/cruds/User_update.action" method="update" >
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
 									aria-hidden="true">×</button>
@@ -138,42 +138,42 @@
 								<div class="row">
 									<label class="col-sm-3 control-label">Nom :</label>
 									<div class="col-sm-6">
-									<input type="text" class="form-control" 
+									<input type="text" name="nom" class="form-control" 
 										value="<s:property value="user.nom" />" required> 
 									</div> 
 								</div>
 								<div class="row">
 									<label class="col-sm-3 control-label">Prénom :</label> 
 									<div class="col-sm-6">
-									<input type="text" class="form-control" 
+									<input type="text" name="prenom" class="form-control" 
 										value="<s:property value="user.prenom" />"> 
 									</div>
 								</div>
 								<div class="row">
 									<label class="col-sm-3 control-label">Age :</label> 
 									<div class="col-sm-6">
-									<input type="text" class="form-control" 
+									<input type="number" name="age" class="form-control" 
 										value="<s:property value="user.age" />"> 
 									</div>
 								</div> 
 								<div class="row">
 									<label class="col-sm-3 control-label">Email :</label> 
 									<div class="col-sm-6">
-									<input type="email" class="form-control" 
+									<input type="email" name="email" class="form-control" 
 										value="<s:property value="user.email" />" required> 
 									</div>
 								</div>
 								<div class="row">
 									<label class="col-sm-3 control-label">profession :</label> 
 									<div class="col-sm-6">
-									<input type="text" class="form-control" 
+									<input type="text" name="profession" class="form-control" 
 										value="<s:property value="user.profession" />"> 
 									</div>
 								</div>
 								<div class="row">
 									<label class="col-sm-3 control-label">statut :</label> 
 									<div class="col-sm-6">
-									<select class="form-control" value="<s:property value="user.statut" />" required>
+									<select class="form-control" name="statut" value="<s:property value="user.statut" />" required>
 										<option></option>
 										<option>0</option>
 										<option>1</option> 
@@ -195,25 +195,68 @@
 				</div>
 
 				<a id="modal-53920" href="#modal-container-53920" role="button"
-					class="btn" data-toggle="modal">autre chose</a><br>
+					class="btn" data-toggle="modal">Ajouter un utilisateur</a><br>
 
 				<div class="modal fade" id="modal-container-53920" role="dialog"
 					aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
-						<div class="modal-content">
+						<s:form cssClass="modal-content" action="/cruds/User_create.action" method="POST" >
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal"
 									aria-hidden="true">×</button>
-								<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+								<h4 class="modal-title" id="myModalLabel">info ici</h4>
 							</div>
-							<div class="modal-body">...</div>
+							<div class="modal-body">
+								
+								<div class="row">
+									<label class="col-sm-3 control-label">Nom :</label>
+									<div class="col-sm-6">
+									<input type="text" name="nom" class="form-control" required> 
+									</div> 
+								</div>
+								<div class="row">
+									<label class="col-sm-3 control-label">Prénom :</label> 
+									<div class="col-sm-6">
+									<input type="text" name="prenom" class="form-control"> 
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-sm-3 control-label">Age :</label> 
+									<div class="col-sm-6">
+									<input type="number" name="age" class="form-control"> 
+									</div>
+								</div> 
+								<div class="row">
+									<label class="col-sm-3 control-label">Email :</label> 
+									<div class="col-sm-6">
+									<input type="email" name="email" class="form-control" required> 
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-sm-3 control-label">profession :</label> 
+									<div class="col-sm-6">
+									<input type="text" name="profession" class="form-control"> 
+									</div>
+								</div>
+								<div class="row">
+									<label class="col-sm-3 control-label">statut :</label> 
+									<div class="col-sm-6">
+									<select class="form-control" name="statut" required>
+										<option></option>
+										<option>0</option>
+										<option>1</option> 
+									</select>
+									</div>
+								</div>
+								
+							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
 									data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save
+								<button type="submit" class="btn btn-primary">Save
 									changes</button>
 							</div>
-						</div>
+						</s:form>
 
 					</div>
 

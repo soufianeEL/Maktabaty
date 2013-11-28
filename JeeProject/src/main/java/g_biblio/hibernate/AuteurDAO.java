@@ -133,8 +133,14 @@ public class AuteurDAO extends HibernateDaoSupport {
 	public Auteur merge(Auteur detachedInstance) {
 		log.debug("merging Auteur instance");
 		try {
-			Auteur result = (Auteur) getHibernateTemplate().merge(
-					detachedInstance);
+			Session session = HibernateSessionFactory.getSession(); 
+			Transaction tx = session.beginTransaction(); 
+			tx.begin(); 
+			
+			//Auteur result = (Auteur) getHibernateTemplate().merge(
+					//detachedInstance);
+			Auteur result = (Auteur) session.merge(detachedInstance);
+			tx.commit(); 
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
