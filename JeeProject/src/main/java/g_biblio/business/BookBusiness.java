@@ -1,6 +1,8 @@
 package g_biblio.business;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Set;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -28,6 +30,45 @@ public class BookBusiness {
 		//author = book.getAuteur();
 		//publisher = book.getEditeur();
 		return book;
+	}
+	
+	public static void updateBook(int id, int editeur, int auteur, String isbn, String titre,
+			Date dateEdition, String resume, Float prix, String image,
+			int enStock, int total, String emplacement){
+		book = bookP.findOuvrageById(id);
+		book.setAuteur(AuthorBusiness.getAuthorInfo(auteur));
+		book.setEditeur(PublisherBusiness.getPublisherInfo(editeur));
+		book.setTitre(titre);
+		book.setEnStock(enStock);
+		book.setIsbn(isbn);
+		book.setImage(image);
+		book.setDateEdition(dateEdition);
+		book.setEmplacement(emplacement);
+		book.setTotal(total);
+		book.setPrix(prix);
+		book.setResume(resume);
+		
+		bookP.updateOuvrage(book);
+		
+	}
+	
+	public static void addBook(int editeur, int auteur, String isbn, String titre,
+			Date dateEdition, String resume, Float prix, String image,
+			int enStock, int total, String emplacement){
+		
+		book.setTitre(titre);
+		book.setIsbn(isbn);
+		book.setResume(resume);
+		book.setDateEdition(dateEdition);
+		book.setEnStock(enStock);
+		book.setTotal(total);
+		book.setPrix(prix);
+		book.setImage(image);
+		book.setEmplacement(emplacement);
+		book.setAuteur(AuthorBusiness.getAuthorInfo(auteur));
+		book.setEditeur(PublisherBusiness.getPublisherInfo(editeur));
+		
+		bookP.addOuvrage(book);
 	}
 
 	public ArrayList<Ouvrage> getAllBooks() {
