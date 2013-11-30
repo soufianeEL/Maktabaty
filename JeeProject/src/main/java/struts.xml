@@ -3,19 +3,21 @@
 <struts>
 	<package name="login" namespace="/logins" extends="struts-default">
 		<action name="ShowLoginPage" class="g_biblio.struts.ShowLoginPage">
-			
-		<result name="success" type="dispatcher">/login.jsp</result></action>
+
+			<result name="success" type="dispatcher">/login.jsp</result>
+		</action>
 	</package>
 	<package name="secure" namespace="/securens" extends="struts-default">
 		<action name="authentificateUser" class="g_biblio.struts.authentificateUser">
-			
+
 			<result name="success" type="redirectAction">
 				<param name="namespace">/pages</param>
 				<param name="actionName">ShowUserPage</param>
 			</result>
-			<result name="error" type="dispatcher">/login.jsp</result></action>
+			<result name="error" type="dispatcher">/login.jsp</result>
+		</action>
 	</package>
-	
+
 	<package name="crud" namespace="/cruds" extends="struts-default">
 		<action name="User_update" class="g_biblio.struts.User" method="update">
 			<result name="success" type="redirectAction">
@@ -30,20 +32,39 @@
 			</result>
 		</action>
 	</package>
-	
+
 	<package name="page" namespace="/pages" extends="struts-default">
 		<action name="ShowUserPage" class="g_biblio.struts.ShowUserPage"
 			method="execute">
-			
-		<result name="success" type="dispatcher">/userPage.jsp</result></action>
+
+			<result name="success" type="dispatcher">/userPage.jsp</result>
+		</action>
 	</package>
 
 	<package name="test" namespace="/testss" extends="struts-default">
 		<action name="TestAction" class="g_biblio.struts.TestAction">
 			<result name="success" type="dispatcher">
 				/bookPage.jsp
-			</result></action></package>
+			</result>
+		</action>
+	</package>
 	<package name="book" namespace="/book" extends="struts-default">
 		<action name="View" class="g_biblio.struts.Book" method="view">
-			<result name="view" type="dispatcher">/bookPage.jsp</result>
-		</action></package></struts>    
+			<result name="success_view" type="dispatcher">/bookPage.jsp</result>
+		</action>
+		<action name="Update" class="g_biblio.struts.Book" method="update">
+			<result name="success_update" type="redirectAction">
+				<param name="namespace">/book</param>
+				<param name="actionName">View</param>
+			</result>
+		</action>
+		<action name="Create" class="g_biblio.struts.Book" method="create">
+			<result name="success_create" type="redirectAction">
+				<param name="namespace">/book</param>
+				<param name="actionName">View</param>
+			</result>
+		</action>
+		<action name="Show" class="g_biblio.struts.ShowPage">
+			<result name="success" type="dispatcher">/login.jsp</result>
+		</action></package>
+</struts>    

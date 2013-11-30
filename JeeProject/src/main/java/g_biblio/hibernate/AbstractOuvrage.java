@@ -164,5 +164,20 @@ public abstract class AbstractOuvrage implements java.io.Serializable {
 	public void setActions(Set actions) {
 		this.actions = actions;
 	}
+	
+	public void toStringg(){
+		System.out.println("id :"+idouvrage);
+		System.out.println("titre :"+titre);
+		System.out.println("isbn : "+isbn);
+		System.out.println("resume : "+resume);
+		System.out.println("prix : "+prix);
+		System.out.println("total : "+total);
+		System.out.println("en stock : "+ enStock);
+		System.out.println("date p : "+dateEdition);
+		System.out.println("image : "+image);
+		System.out.println("emplacement"+emplacement);
+		System.out.println("auteur : "+auteur.getIdauteur());
+		System.out.println("editeur : "+editeur.getIdediteur());
+	}
 
 }

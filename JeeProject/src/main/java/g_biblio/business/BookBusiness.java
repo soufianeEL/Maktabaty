@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Set;
 
+
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
+
+import com.sun.jdi.Method;
 
 import g_biblio.hibernate.Auteur;
 import g_biblio.hibernate.Editeur;
@@ -35,26 +38,45 @@ public class BookBusiness {
 	public static void updateBook(int id, int editeur, int auteur, String isbn, String titre,
 			Date dateEdition, String resume, Float prix, String image,
 			int enStock, int total, String emplacement){
+		
 		book = bookP.findOuvrageById(id);
+		
 		book.setAuteur(AuthorBusiness.getAuthorInfo(auteur));
 		book.setEditeur(PublisherBusiness.getPublisherInfo(editeur));
 		book.setTitre(titre);
 		book.setEnStock(enStock);
 		book.setIsbn(isbn);
-		book.setImage(image);
-		book.setDateEdition(dateEdition);
-		book.setEmplacement(emplacement);
+		//book.setImage(image);
+		//book.setDateEdition(dateEdition);
+		//book.setEmplacement(emplacement);
 		book.setTotal(total);
 		book.setPrix(prix);
 		book.setResume(resume);
 		
 		bookP.updateOuvrage(book);
+	}
+	
+	public static void updateBook(Ouvrage bookU){
+	
+		book = bookP.findOuvrageById(bookU.getIdouvrage());
+		book.setAuteur(AuthorBusiness.getAuthorInfo(bookU.getAuteur().getIdauteur()));
+		book.setEditeur(PublisherBusiness.getPublisherInfo(bookU.getEditeur().getIdediteur()));
+		book.setTitre(bookU.getTitre());
+		book.setEnStock(bookU.getEnStock());
+		book.setIsbn(bookU.getIsbn());
+		book.setImage(bookU.getImage());
+		//book.setDateEdition(bookU.getDateEdition());
+		book.setEmplacement(bookU.getEmplacement());
+		book.setTotal(bookU.getTotal());
+		book.setPrix(bookU.getPrix());
+		book.setResume(bookU.getResume());
 		
+		bookP.updateOuvrage(book);
 	}
 	
 	public static void addBook(int editeur, int auteur, String isbn, String titre,
 			Date dateEdition, String resume, Float prix, String image,
-			int enStock, int total, String emplacement){
+			int enStock, int total/*, String emplacement*/){
 		
 		book.setTitre(titre);
 		book.setIsbn(isbn);
@@ -64,7 +86,7 @@ public class BookBusiness {
 		book.setTotal(total);
 		book.setPrix(prix);
 		book.setImage(image);
-		book.setEmplacement(emplacement);
+		//book.setEmplacement(emplacement);
 		book.setAuteur(AuthorBusiness.getAuthorInfo(auteur));
 		book.setEditeur(PublisherBusiness.getPublisherInfo(editeur));
 		
