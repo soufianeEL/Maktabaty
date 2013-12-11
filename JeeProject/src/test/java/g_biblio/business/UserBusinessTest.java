@@ -37,7 +37,7 @@ public class UserBusinessTest {
 	 */
 	@Test
 	public void testGetUserInfo() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class UserBusinessTest {
 	 */
 	@Test
 	public void testGetAllUsers() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 }

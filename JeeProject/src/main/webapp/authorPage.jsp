@@ -27,6 +27,35 @@
 </head>
 
 <body>
+	<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav"
+		role="banner">
+	<div class="container">
+		<div class="navbar-header">
+			<button class="navbar-toggle" type="button" data-toggle="collapse"
+				data-target=".bs-navbar-collapse">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a href="/webapp_test/logins/ShowLoginPage.action"
+				class="navbar-brand">Maktabati</a>
+		</div>
+		<nav class="collapse navbar-collapse bs-navbar-collapse"
+			role="navigation">
+		<ul class="nav navbar-nav">
+			<li><a href="">Acceuil</a></li>
+			<li class="active"><a href="/webapp_test/authorPage.jsp">Auteurs</a></li>
+			<li><a
+				href="/webapp_test/pages/ShowUserPage.action">Utilisateur</a></li>
+			<li><a href="/webapp_test/book/View.action">Ouvrage</a></li>
+			<li><a href="">se connecter</a></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="">A propos</a></li>
+		</ul>
+		</nav>
+	</div>
+	</header>
 	<div class="container">
 		<hr class="featurette-divider">
 		<div class="row clearfix">

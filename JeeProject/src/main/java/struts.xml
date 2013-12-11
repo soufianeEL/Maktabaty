@@ -41,13 +41,7 @@
 		</action>
 	</package>
 
-	<package name="test" namespace="/testss" extends="struts-default">
-		<action name="TestAction" class="g_biblio.struts.TestAction">
-			<result name="success" type="dispatcher">
-				/bookPage.jsp
-			</result>
-		</action>
-	</package>
+	
 	<package name="book" namespace="/book" extends="struts-default">
 		<action name="View" class="g_biblio.struts.Book" method="view">
 			<result name="success_view" type="dispatcher">/bookPage.jsp</result>
@@ -66,5 +60,10 @@
 		</action>
 		<action name="Show" class="g_biblio.struts.ShowPage">
 			<result name="success" type="dispatcher">/login.jsp</result>
+		</action>
+		<action name="ViewAll" class="g_biblio.struts.Book" method="viewall">
+			<result name="success" type="dispatcher">
+				/index2.jsp
+			</result>
 		</action></package>
 </struts>    

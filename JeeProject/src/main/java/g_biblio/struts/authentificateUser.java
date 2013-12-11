@@ -29,7 +29,11 @@ public class authentificateUser extends ActionSupport {
 	public String execute() {
 		System.out.println("==> authentificateUser Action !!");
 		// Empty username or password value is not permitted.
-		if (getUserName().equals("") || getPassword().equals("")) {
+		/*if (!getUserName().equals("admin") || !getPassword().equals("admin")) {
+			addActionError("Invalid username or password! Please try again!");
+			return ERROR;
+		}*/
+		if (getUserName().equals("user") || getPassword().equals("user")) {
 			addActionError("Invalid username or password! Please try again!");
 			return ERROR;
 		}

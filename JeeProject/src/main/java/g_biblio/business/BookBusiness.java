@@ -26,6 +26,7 @@ public class BookBusiness {
 	private static Ouvrage book = new Ouvrage();
 	private static Auteur author = new Auteur();
 	private static Editeur publisher = new Editeur();
+	private static ArrayList<Ouvrage> listbook = new ArrayList<Ouvrage>();
 
 	public static Ouvrage getBookInfo(int id) {
 		System.out.println("==> bookB");
@@ -93,9 +94,11 @@ public class BookBusiness {
 		bookP.addOuvrage(book);
 	}
 
-	public ArrayList<Ouvrage> getAllBooks() {
+	public  static ArrayList<Ouvrage> getAllBooks() {
+		
+		listbook = (ArrayList<Ouvrage>) bookP.findAllOuvrage();
 
-		return null;
+		return listbook;
 	}
 
 }

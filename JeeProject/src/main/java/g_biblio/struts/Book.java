@@ -1,5 +1,7 @@
 package g_biblio.struts;
 
+import java.util.ArrayList;
+
 import g_biblio.business.AuthorBusiness;
 import g_biblio.business.BookBusiness;
 import g_biblio.business.PublisherBusiness;
@@ -15,6 +17,14 @@ public class Book extends ActionSupport implements ModelDriven{
 	private Ouvrage book = new Ouvrage();
 	private Auteur auteur ;//= new Auteur();
 	private Editeur editeur;// = new Editeur();
+	private ArrayList<Ouvrage> listbook = new ArrayList<Ouvrage>();
+	
+	public ArrayList<Ouvrage> getListbook() {
+		return listbook;
+	}
+	public void setListbook(ArrayList<Ouvrage> listbook) {
+		this.listbook = listbook;
+	}
 	public Ouvrage getBook() {
 		return book;
 	}
@@ -40,6 +50,18 @@ public class Book extends ActionSupport implements ModelDriven{
 	public String execute() {
 		System.out.println("==> Book Action !! : methode = execute");
 		return "view";
+	}
+	
+	public String viewall(){
+		System.out.println("==> Book Action !! : methode = viewAll");
+		
+		listbook = BookBusiness.getAllBooks();
+		
+		for (Ouvrage bk : listbook) {
+			System.out.println("***"+bk.getIdouvrage());
+		}
+		
+		return SUCCESS;
 	}
 	public String view() {
 		System.out.println("==> Book Action !! : methode = view");

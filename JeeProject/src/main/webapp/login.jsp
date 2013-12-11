@@ -29,13 +29,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div class="container">
-	  
-	  <s:actionerror/>
-	  <s:form cssClass="form-signin" action="/securens/authentificateUser.action">
-	  	<h2 class="form-signin-heading">Please sign in</h2>
-	  	<s:textfield cssClass="form-control" placeholder="Email address" name="userName" />
+    
+    	<div class="alert alert-success alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert"
+				aria-hidden="true">×</button>
+			<s:actionerror/>
+		</div>
+	  <s:form cssClass="form-signin" cssStyle="text-align: center;" action="/securens/authentificateUser.action">
+	  	<h2 class="form-signin-heading">Se connecter</h2>
+	  	<s:textfield cssClass="form-control" placeholder="login" name="userName" />
 	  	<s:password cssClass="form-control" placeholder="Password" name="password" />
-	  	<s:submit value="Sign in" cssClass="btn btn-lg btn-primary btn-block"/>
+	  	<s:submit value="connexion" cssClass="btn btn-lg btn-primary btn-block"/>
 	  	
 	  </s:form>
       <!--  form class="form-signin">

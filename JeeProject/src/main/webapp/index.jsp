@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -24,8 +23,13 @@
 <link rel="shortcut icon" type="text/css"
 	href="/webapp_test/docs-assets/ico/favicon.png">
 <!-- Bootstrap core CSS -->
+
 <link type="text/css" href="/webapp_test/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+	
+<link type="text/css" href="/webapp_test/dist/css/docs.css"
+	rel="stylesheet">
+
 
 </head>
 
@@ -41,44 +45,42 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a href="/webapp_test/logins/ShowLoginPage.action" class="navbar-brand">Maktabati</a>
+				<a href="/webapp_test/logins/ShowLoginPage.action" class="navbar-brand active">Maktabati</a>
 			</div>
 			<nav class="collapse navbar-collapse bs-navbar-collapse"
 				role="navigation">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="">Acceuil</a></li>
-					<li><a href="/webapp_test/authorPage.jsp">Auteurs</a></li>
-					<li><a href="#">Components</a></li>
-					<li><a href="/webapp_test/book/View.action">Recherche Avancé</a></li>
+					<li class=""><a href="">Acceuil</a></li>
+					<li><a href="#">Auteur</a></li>
+					<li><a href="#">Utilisateur</a></li>
+					<li><a href="#">Ouvrage</a></li>
 					<li><a href="#">se connecter</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="../about">A propos</a></li>
+					<li><a href="#">A propos</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
 
+	<main class="bs-masthead" id="content" role="main">
+
+
 	<div class="container">
 
-		<div class="starter-template">
-			<h1>Bootstrap starter template</h1>
-			<p class="lead">
-				Use this document as a way to quickly start any new project.<br>
-				All you get is this text and a mostly barebones HTML document.
-			</p>
-			
-			<br>
-			
-			<img class="img-thumbnail" alt="140x140" style="width: 250px; height: 340px;" src="/webapp_test/dist/image.png">
-			<img class="img-thumbnail" alt="140x140" style="width: 250px; height: 340px;" src="/webapp_test/dist/image.png">
-			<img class="img-thumbnail" alt="140x140" style="width: 250px; height: 340px;" src="/webapp_test/dist/image.png">
-			
-		</div>
+		<h1>Maktabati</h1>
+		<p class="lead">Application JEE de gestion d'une Bibliothèque</p>
+		<h2>Avec l'integration des framwork : Hibernate - Spring - Struts </h2>
+		<h3>Projet Encadré par Mr: Touil</h3>
+		<p>
+			<a href="/webapp_test/book/ViewAll.action" class="btn btn-outline-inverse btn-lg"">Voir
+				L'application</a> <a href="https://github.com/soufianeEL/Maktabaty"
+				class="btn btn-outline-inverse btn-lg">code source de l'app</a>
+		</p>
 
 	</div>
 
-
+	</main>
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
